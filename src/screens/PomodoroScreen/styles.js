@@ -1,19 +1,21 @@
 import { StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
 
 export default StyleSheet.create({
   flexRow: { flexDirection: 'row' },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center'
+    backgroundColor: '#6a6a6a',
+    alignItems: 'center',
+    paddingTop: Constants.statusBarHeight
   },
   actionBar: {
-    backgroundColor: 'gray',
+    height: 55,
+    backgroundColor: 'black',
     alignSelf: 'stretch',
-    elevation: 2,
-    paddingTop: 22
+    elevation: 2
   },
-  title: { marginStart: 12, padding: 8, fontSize: 25, color: 'white' },
+  title: { marginStart: 24, padding: 8, fontSize: 25, color: 'white' },
   timerContainer: {
     marginVertical: 24,
     marginHorizontal: 24,
@@ -45,7 +47,7 @@ export default StyleSheet.create({
   },
   timerDetails: {
     width: '80%',
-    paddingVertical:8,
+    paddingVertical: 8,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
