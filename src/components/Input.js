@@ -7,12 +7,12 @@ const timerType = {
   secondsType: 'secondsType'
 };
 
-const Input = () => (
+const Input = props => (
   <TextInput
     keyboardType='numeric'
     style={styles.input}
     maxLength={2}
-    onChangeText={() => handleInput(this.props.type, this.props.value)}
+    onChangeText={() => handleInput(props.type, props.value)}
   />
 );
 const handleInput = (type, value) => {

@@ -5,7 +5,7 @@ import {
   Text,
   TouchableWithoutFeedback,
   View,
-  StyleSheet
+  Image
 } from 'react-native';
 
 import vibrate from '../../utils/vibrate';
@@ -24,9 +24,7 @@ const strings = {
   pause: 'Pause'
 };
 
-const toMMSS = () => {
-  convertTime();
-};
+const toMMSS = time => convertTime(time);
 
 export default class PomodoroScreen extends Component {
   state = {
@@ -129,10 +127,13 @@ export default class PomodoroScreen extends Component {
         }}
       >
         <View style={styles.container}>
-          <Text style={styles.title}>{this.state.title}</Text>
-          <Text style={styles.timer}>
-            {this.state.time.toString().toMMSS()}
-          </Text>
+          <View style={styles.actionBar}>
+            <Text style={styles.title}>Pomodoro Timer</Text>
+          </View>
+          <View style={styles.timerContainer}>
+            <Text style={styles.timerTitle}>{this.state.title}</Text>
+            <Text style={styles.timer}>{toMMSS(this.state.time)}</Text>
+          </View>
           <View style={styles.buttonContainer}>
             <Button
               title={!this.state.isActive ? strings.start : strings.pause}

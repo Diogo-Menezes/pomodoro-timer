@@ -5,20 +5,27 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: 'center'
   },
-  buttonContainer: {
-    width: '40%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    margin: 22
+  actionBar: {
+    backgroundColor: 'gray',
+    alignSelf: 'stretch',
+    elevation: 2,
+    paddingTop: 22
   },
-  inputLabel: {
-    alignSelf: 'center'
+  title: { marginStart: 12, padding: 8, fontSize: 25, color: 'white' },
+  timerContainer: {
+    marginVertical: 24,
+    marginHorizontal: 24,
+    paddingTop: 16,
+    backgroundColor: 'gray',
+    alignSelf: 'stretch',
+    borderRadius: 8,
+    paddingBottom: 16,
+    elevation: 2
   },
-  title: { fontSize: 50 },
-  timer: { fontSize: 40 },
+  timerTitle: { color: 'white', textAlign: 'center', fontSize: 40 },
+  timer: { color: 'white', fontSize: 40, textAlign: 'center' },
   input: {
     margin: 4,
     padding: 4,
@@ -27,8 +34,18 @@ export default StyleSheet.create({
     borderColor: 'grey',
     borderWidth: 1
   },
+  buttonContainer: {
+    width: '80%',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    margin: 22
+  },
+  inputLabel: {
+    alignSelf: 'center'
+  },
   timerDetails: {
     width: '80%',
+    paddingVertical:8,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'

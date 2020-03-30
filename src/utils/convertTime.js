@@ -1,4 +1,5 @@
-export default String.prototype.toMMSS = time => {
+
+export default toMMSS = time => {
   let input = parseInt(time, 10);
   let minutes = Math.floor(input / 60);
   let seconds = input - minutes * 60;

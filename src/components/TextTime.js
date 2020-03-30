@@ -1,47 +1,12 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Input from './Input';
+import styles from '../screens/PomodoroScreen/styles';
 
 const timerType = {
   minutesType: 'minutesType',
-  secondsType: 'secondsType',
+  secondsType: 'secondsType'
 };
-
-
-const styles = StyleSheet.create({
-  flexRow: { flexDirection: 'row' },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  buttonContainer: {
-    width: '40%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    margin: 22
-  },
-  inputLabel: {
-    alignSelf: 'center'
-  },
-  title: { fontSize: 50 },
-  timer: { fontSize: 40 },
-  input: {
-    margin: 4,
-    padding: 4,
-    width: 40,
-    height: 25,
-    borderColor: 'grey',
-    borderWidth: 1
-  },
-  timerDetails: {
-    width: '80%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  }
-})
 
 const minToSec = mins => mins * 60;
 
@@ -57,18 +22,16 @@ export default class TextTime extends React.Component {
     // console.log(minString);
     const minutes = minToSec(minString);
     const time = this.state.time + minutes;
-    this.setState({ time: time, minutes: minutes });
+    this.setState({ time, minutes });
   };
 
   handleSecChange = secString => {
-    // console.log(secString);
     const seconds = +secString;
     const time = this.state.minutes + seconds;
-    this.setState({ time: time, seconds: seconds });
+    this.setState({ time, seconds });
   };
 
   onTimeSetHandler(type, val) {
-    // console.log(val + ' ' + type);
     if (type === timerType.minutesType) {
       this.handleMinChange(val);
     } else {
