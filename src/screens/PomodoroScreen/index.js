@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Button,
   Keyboard,
@@ -12,21 +12,13 @@ import vibrate from '../../utils/vibrate';
 import TextTime from '../../components/TextTime';
 import convertTime from '../../utils/convertTime';
 import styles from './styles';
+import strings from '../../config/strings';
 
 const DEFAULT_WORK_TIME = 25;
 const DEFAULT_BREAK_TIME = 5;
 const minToSec = mins => mins * 60;
 
-const strings = {
-  workTime: 'Work Time',
-  breakTime: 'Break time',
-  start: 'Start',
-  pause: 'Pause'
-};
-
-const toMMSS = time => convertTime(time);
-
-export default class PomodoroScreen extends Component {
+export default class PomodoroScreen extends React.Component {
   state = {
     workTime: minToSec(DEFAULT_WORK_TIME),
     breakTime: minToSec(DEFAULT_BREAK_TIME),
@@ -37,6 +29,8 @@ export default class PomodoroScreen extends Component {
   };
 
   render() {
+    const toMMSS = time => convertTime(time);
+    
     const startAndPauseHandler = () => {
       console.log('startAndPauseHandler called');
       if (this.state.isActive) {
